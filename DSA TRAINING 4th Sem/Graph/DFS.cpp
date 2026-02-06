@@ -1,11 +1,14 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<stack>
+#include<algorithm>
+
 using namespace std;
 
 int main (){
 
-   
+ 
     int N, E;
     cout<<"Enter the Number of Vertices:";
     cin>>N;
@@ -21,33 +24,15 @@ int main (){
 
     }
 
-     for(int i=0;i<N;i++){
+    for(int i=0;i<N;i++){
         cout<<i<<":";
         for(int j=0;j<AdjList[i].size();j++){
             cout<<AdjList[i][j]<<",";
         }
-           cout<<endl;
+        cout<<endl;
     }
 
-  
-    queue<int>Q;
-    vector<int> status(N,0);
-     
-    Q.push(0);
-    status[0] = 1;
-    cout<<" The BFS order is :=> ";
-    while(Q.size() != 0){
-        int x = Q.front();
-        cout<<x<<" ,";
-        Q.pop();
-        for(int k=0;k<AdjList[x].size();k++){
-            int e = AdjList[x][k];
-              if(status[e] == 0){
-                 status[e] = 1;
-                  Q.push(e);
-                }
-        }
-    }
-    
+
+
 
 }
